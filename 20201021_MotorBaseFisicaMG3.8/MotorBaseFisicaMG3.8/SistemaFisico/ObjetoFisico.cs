@@ -14,7 +14,7 @@ namespace MotorBaseFisicaMG38.SistemaFisico
         public Dibujable dibujable;
         public bool isStatic = false;
         public bool isTrigger = false;
-        public float absorcionChoque = 1;
+        public float absorcionChoque = 0f;
         public float rot { get { return dibujable.rot; } set { dibujable.rot = value; } }
         public Vector2 pos { get { return dibujable.pos; } set{dibujable.pos = value; } }
         private Vector2 prevPos;
@@ -101,8 +101,6 @@ namespace MotorBaseFisicaMG38.SistemaFisico
             if (forceVel)
             {
                 forcedAcel += (fuerza / masa);
-                //Debug.WriteLine("Acel Forzada: "+forcedAcel);
-                //Debug.WriteLine("Prev Acel:" + prevAcel + " Acel:" + acel);
                 return;
             }
             acel += (fuerza / masa);                                               
@@ -131,7 +129,6 @@ namespace MotorBaseFisicaMG38.SistemaFisico
             }
             vel -= vel * (roce)*deltaTiempoSeg;            
             forcedAcel = acel = Vector2.Zero;                                          
-            //vel = vel * .9f;
         }
         public void Destruir()
         {

@@ -7379,11 +7379,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\cvene\\Desktop\\20201021_MotorBaseFisicaMG3.8\\MotorBaseFisicaMG3.8\\MotorBaseFisicaMG38.csproj",
+      "projectUniqueName": "C:\\Users\\cvene\\Documents\\GitHub\\GatoFisica\\20201021_MotorBaseFisicaMG3.8\\MotorBaseFisicaMG3.8\\MotorBaseFisicaMG38.csproj",
       "projectName": "MotorBaseFisicaMG38",
-      "projectPath": "C:\\Users\\cvene\\Desktop\\20201021_MotorBaseFisicaMG3.8\\MotorBaseFisicaMG3.8\\MotorBaseFisicaMG38.csproj",
+      "projectPath": "C:\\Users\\cvene\\Documents\\GitHub\\GatoFisica\\20201021_MotorBaseFisicaMG3.8\\MotorBaseFisicaMG3.8\\MotorBaseFisicaMG38.csproj",
       "packagesPath": "C:\\Users\\cvene\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\cvene\\Desktop\\20201021_MotorBaseFisicaMG3.8\\MotorBaseFisicaMG3.8\\obj\\",
+      "outputPath": "C:\\Users\\cvene\\Documents\\GitHub\\GatoFisica\\20201021_MotorBaseFisicaMG3.8\\MotorBaseFisicaMG3.8\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

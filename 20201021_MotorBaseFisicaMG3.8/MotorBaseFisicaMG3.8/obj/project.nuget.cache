@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mOCupbC0MVBTyEVJMIwZxmmH91912hFjrfiop0kESv8HszvRFN9KP/Z078rvO1X37PW9qNxZBfOtUhYdmYuG1g==",
+  "dgSpecHash": "UGKgOMYV8hSZqJkp1c2xvzgGNrsrecjWNO+m6ZyGzOzEE9XQ0Pxf7teT1msn7JRfOH+8vmw6GgZ2TubdTdXpYg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\cvene\\Desktop\\20201021_MotorBaseFisicaMG3.8\\MotorBaseFisicaMG3.8\\MotorBaseFisicaMG38.csproj",
+  "projectFilePath": "C:\\Users\\cvene\\Documents\\GitHub\\GatoFisica\\20201021_MotorBaseFisicaMG3.8\\MotorBaseFisicaMG3.8\\MotorBaseFisicaMG38.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\cvene\\.nuget\\packages\\libuv\\1.9.1\\libuv.1.9.1.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.codeanalysis.analyzers\\1.1.0\\microsoft.codeanalysis.analyzers.1.1.0.nupkg.sha512",

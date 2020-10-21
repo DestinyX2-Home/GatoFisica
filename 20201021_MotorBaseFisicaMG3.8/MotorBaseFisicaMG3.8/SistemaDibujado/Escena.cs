@@ -5,11 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MotorBaseFisicaMG38.SistemaGameObject;
+using MotorBaseFisicaMG38.MyGame;
 
 namespace MotorBaseFisicaMG38.SistemaDibujado
 {
     public class Escena
     {
+        public List<Component> components { get; private set; } = new List<Component>();
         public List<Dibujable> dibujables { get; private set; } = new List<Dibujable>();
         public static Escena INSTANCIA;
 

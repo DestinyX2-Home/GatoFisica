@@ -6,6 +6,7 @@ using MotorBaseFisicaMG38.MyGame;
 using MotorBaseFisicaMG38.SistemaDibujado;
 using MotorBaseFisicaMG38.SistemaFisico;
 using MotorBaseFisicaMG38.SistemaGameObject;
+using MotorBaseFisicaMG38.MyGame.Components;
 
 namespace MotorBaseFisicaMG38
 {
@@ -48,7 +49,7 @@ namespace MotorBaseFisicaMG38
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            new Escena2();
+            CreateScene(0);
 
             // TODO: use this.Content to load your game content here
         }
@@ -72,8 +73,6 @@ namespace MotorBaseFisicaMG38
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
            
-            Console.WriteLine(gameTime.ElapsedGameTime.TotalSeconds);
-            // TODO: Add your update logic here
             Escena.INSTANCIA?.Update(gameTime);
             MotorFisico.Update(gameTime);
             UTGameObjectsManager.Update(gameTime);
@@ -89,9 +88,159 @@ namespace MotorBaseFisicaMG38
             GraphicsDevice.Clear(Color.CornflowerBlue);
             spriteBatch.Begin();
             Camara.ActiveCamera?.Dibujar(spriteBatch);
+            foreach (Component com in Escena.INSTANCIA.components)
+            {
+                com.Draw(gameTime, spriteBatch);
+            }
             spriteBatch.End();
 
             base.Draw(gameTime);
         }
+
+        void CreateScene(int index)
+        {
+            switch (index)
+            {
+                case 0:
+                    {
+                        MenuScene menu = new MenuScene();
+
+                        Button startButton = new Button(Content.Load<Texture2D>("button1"), Content.Load<SpriteFont>("Font"))
+                        {
+                            Scale = .5f,
+                            Position = new Vector2(0, 0),
+                            Text = "Iniciar",
+                        };
+                        startButton.Click += StartGame_Click;
+
+                        Button helpButton = new Button(Content.Load<Texture2D>("button1"), Content.Load<SpriteFont>("Font"))
+                        {
+                            Scale = .5f,
+                            Position = new Vector2(0, 70),
+                            Text = "Instrucciones",
+                        };
+                        helpButton.Click += LoadInstructions_Click;
+
+                        Button creditsButton = new Button(Content.Load<Texture2D>("button1"), Content.Load<SpriteFont>("Font"))
+                        {
+                            Scale = .5f,
+                            Position = new Vector2(0, 140),
+                            Text = "Creditos",
+                        };
+                        creditsButton.Click += LoadCredits_Click;
+
+                        Button exitButton = new Button(Content.Load<Texture2D>("button1"), Content.Load<SpriteFont>("Font"))
+                        {
+                            Scale = .5f,
+                            Position = new Vector2(0, 210),
+                            Text = "Salir",
+                        };
+                        exitButton.Click += ExitGame_Click;
+
+                        menu.components.Add(startButton);
+                        menu.components.Add(helpButton);
+                        menu.components.Add(creditsButton);
+                        menu.components.Add(exitButton);
+                    }
+                    break;
+                case 1:
+                    {
+                        MainGame game = new MainGame();
+                        Button backMenu = new Button(Content.Load<Texture2D>("Button1"), Content.Load<SpriteFont>("Font"))
+                        {
+                            Scale = .3f,
+                            Position = new Vector2(0, 440),
+                            Text = "Volver al menu",
+                        };
+                        backMenu.Click += LoadMainMenu;
+
+                        Button resetButton = new Button(Content.Load<Texture2D>("Button2"), Content.Load<SpriteFont>("Font"))
+                        {
+                            Scale = .3f,
+                            Position = new Vector2(800 - Content.Load<Texture2D>("Button2").Width / 3.3f, 440),
+                            Text = "Reiniciar",
+                        };
+                        resetButton.Click += StartGame_Click;
+
+                        TextDisplayer text1 = new TextDisplayer(Content.Load<Texture2D>("borde3"), Content.Load<SpriteFont>("Font"))
+                        {
+                            Scale = 1.5f,
+                            Position = new Vector2(400 - (Content.Load<Texture2D>("borde3").Width * 1.5f) / 2, 380),
+                            Text = "",
+                        };
+                        TextDisplayer text2 = new TextDisplayer(Content.Load<Texture2D>("borde3"), Content.Load<SpriteFont>("Font"))
+                        {
+                            Scale = 0f,
+                            Position = Vector2.Zero,
+                            Text = "",
+                        };
+                        game.components.Add(text2);
+                        game.components.Add(backMenu);
+                        game.components.Add(resetButton);
+                        game.components.Add(text1);
+                    }
+                    break;
+                case 2:
+                    {
+                        EmptyScene instructions = new EmptyScene();
+                        Button backButton = new Button(Content.Load<Texture2D>("button1"), Content.Load<SpriteFont>("Font"))
+                        {
+                            Scale = .5f,
+                            Position = new Vector2(0, 400),
+                            Text = "Volver",
+                        };
+                        backButton.Click += LoadMainMenu;
+                        instructions.components.Add(backButton);
+                    }
+                    break;
+                case 3:
+                    {
+                        EmptyScene credits = new EmptyScene();
+                        Button backButton = new Button(Content.Load<Texture2D>("button1"), Content.Load<SpriteFont>("Font"))
+                        {
+                            Scale = .5f,
+                            Position = new Vector2(0, 400),
+                            Text = "Volver",
+                        };
+                        TextDisplayer text1 = new TextDisplayer(Content.Load<Texture2D>("borde3"), Content.Load<SpriteFont>("Font"))
+                        {
+                            Scale = 1f,
+                            Position = new Vector2(400 - Content.Load<Texture2D>("borde3").Width / 2, 400),
+                            Text = "Discord Salon 15",
+                        };
+                        backButton.Click += LoadMainMenu;
+                        credits.components.Add(backButton);
+                        credits.components.Add(text1);
+                        credits.dibujables.Add(new Dibujable("creditos", new Vector2(400, 210), .85f));
+                    }
+                    break;
+                default:
+                    Console.WriteLine("uwu");
+                    break;
+            }
+        }
+
+        #region Buttons Actions
+        private void StartGame_Click(object sender, System.EventArgs e)
+        {
+            CreateScene(1);
+        }
+        private void ExitGame_Click(object sender, System.EventArgs e)
+        {
+            Exit();
+        }
+        private void LoadMainMenu(object sender, System.EventArgs e)
+        {
+            CreateScene(0);
+        }
+        private void LoadCredits_Click(object sender, System.EventArgs e)
+        {
+            CreateScene(3);
+        }
+        private void LoadInstructions_Click(object sender, System.EventArgs e)
+        {
+            CreateScene(2);
+        }
+        #endregion
     }
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/cvene/Desktop/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/Autito.png</SourceFile>
+  <SourceFile>C:/Users/cvene/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/Autito.png</SourceFile>
   <SourceTime>2020-07-28T16:36:06.7606437-04:00</SourceTime>
-  <DestFile>C:/Users/cvene/Desktop/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/bin/Windows/Content/Autito.xnb</DestFile>
-  <DestTime>2020-10-21T12:21:10.3437017-03:00</DestTime>
+  <DestFile>C:/Users/cvene/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/bin/Windows/Content/Autito.xnb</DestFile>
+  <DestTime>2020-10-21T12:39:07.1407183-03:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2020-08-10T16:17:54-04:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

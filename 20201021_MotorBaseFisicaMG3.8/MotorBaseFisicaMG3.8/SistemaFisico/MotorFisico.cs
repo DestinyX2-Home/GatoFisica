@@ -12,6 +12,7 @@ namespace MotorBaseFisicaMG38.SistemaFisico
     { 
         public static float WorldSizeScale = 100f;
         public static Vector2 Gravity = new Vector2(0, 9.8f);
+        public static float Roce = .8f;
         public static List<ObjetoFisico> objetosFisicos = new List<ObjetoFisico>();
         public static void agregarObjetoFisico(ObjetoFisico of)
         {
