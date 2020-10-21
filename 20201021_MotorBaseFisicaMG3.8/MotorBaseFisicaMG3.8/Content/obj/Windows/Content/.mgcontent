@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Profile>Reach</Profile>
+  <Platform>Windows</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/Users/cvene/Desktop/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/Autito.png</File>
+    <File>C:/Users/cvene/Desktop/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/etfx_shoot_mystic.wav</File>
+    <File>C:/Users/cvene/Desktop/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/Locations_Happy Village (loop).ogg</File>
+    <File>C:/Users/cvene/Desktop/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/meow_cookie.png</File>
+    <File>C:/Users/cvene/Desktop/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/Muro.png</File>
+  </SourceFiles>
+  <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+  </DestFiles>
+</SourceFileCollection>

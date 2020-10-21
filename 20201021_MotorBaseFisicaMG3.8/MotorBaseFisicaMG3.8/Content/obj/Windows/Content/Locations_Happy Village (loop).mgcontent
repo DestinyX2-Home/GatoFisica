@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SourceFile>C:/Users/cvene/Desktop/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/Locations_Happy Village (loop).ogg</SourceFile>
+  <SourceTime>2019-07-14T16:14:30-04:00</SourceTime>
+  <DestFile>C:/Users/cvene/Desktop/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/bin/Windows/Content/Locations_Happy Village (loop).xnb</DestFile>
+  <DestTime>2020-10-21T12:21:11.8930132-03:00</DestTime>
+  <Importer>OggImporter</Importer>
+  <ImporterTime>2020-08-10T16:17:54-04:00</ImporterTime>
+  <Processor>SongProcessor</Processor>
+  <ProcessorTime>2020-08-10T16:17:54-04:00</ProcessorTime>
+  <Parameters>
+    <Key>Quality</Key>
+    <Value>Best</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput>
+    <string>C:/Users/cvene/Desktop/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/bin/Windows/Content/Locations_Happy Village (loop).wma</string>
+  </BuildOutput>
+</PipelineBuildEvent>
