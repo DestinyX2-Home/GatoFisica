@@ -17,7 +17,7 @@ namespace MotorBaseFisicaMG38.MyGame
         
         public Gato() : base("meow_cookie", new Vector2(300, 300), 1, UTGameObject.FF_form.Circulo)
         {
-
+            objetoFisico.absorcionChoque = .5f;
         }
         public override void Update(GameTime gameTime)
         {

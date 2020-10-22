@@ -14,7 +14,7 @@ namespace MotorBaseFisicaMG38.SistemaFisico
         public Dibujable dibujable;
         public bool isStatic = false;
         public bool isTrigger = false;
-        public float absorcionChoque = 0f;
+        public float absorcionChoque = 1f;
         public float rot { get { return dibujable.rot; } set { dibujable.rot = value; } }
         public Vector2 pos { get { return dibujable.pos; } set{dibujable.pos = value; } }
         private Vector2 prevPos;
@@ -118,7 +118,6 @@ namespace MotorBaseFisicaMG38.SistemaFisico
                 vel += (acel) * deltaTiempoSeg;
             }
             
-            float roce = 0f;
             if (vel.LengthSquared() < .005f)
             {
                 //don't move
@@ -127,7 +126,7 @@ namespace MotorBaseFisicaMG38.SistemaFisico
             {
                 pos += ((prevVel + vel) / 2) * deltaTiempoSeg * MotorFisico.WorldSizeScale;
             }
-            vel -= vel * (roce)*deltaTiempoSeg;            
+            vel -= vel * (MotorFisico.RoceAire)*deltaTiempoSeg;            
             forcedAcel = acel = Vector2.Zero;                                          
         }
         public void Destruir()

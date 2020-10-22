@@ -29,6 +29,7 @@ namespace MotorBaseFisicaMG38.MyGame
             camara = new Camara(new Vector2(400 / 300), 1, 0);
             camara.HacerActiva();
             circulo = new UTGameObject("meow_cookie", new Vector2(400, 200), .2f, UTGameObject.FF_form.Circulo);
+            circulo.objetoFisico.absorcionChoque = .1f;
             superior = new UTGameObject("Colsion1", new Vector2(150, -10), 3f, UTGameObject.FF_form.Rectangulo, true);
             inferior = new UTGameObject("Colsion1", new Vector2(150, 450), 3f, UTGameObject.FF_form.Rectangulo, true);
             izquierdo = new UTGameObject("Collision2", new Vector2(20, 220), 1f, UTGameObject.FF_form.Rectangulo, true);
