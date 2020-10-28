@@ -50,8 +50,7 @@ namespace MotorBaseFisicaMG38.SistemaGameObject
         }
 
         public virtual void OnCollision(UTGameObject other)
-        {
-
+        {           
         }
         public void Destroy()
         {

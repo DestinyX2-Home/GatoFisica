@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
@@ -90,14 +91,19 @@ namespace MotorBaseFisicaMG38.MyGame
             {
                 new UTGameObject("meow_cookie", camara.PosMouseEnCamara(), .2f, UTGameObject.FF_form.Circulo);
                 spawnedCookie = true;
+
+                float angle = MathF.Atan(1.2f);
+                
+                Debug.WriteLine(MathF.Sin(angle));
+                Debug.WriteLine(MathF.Cos(angle));
+
+
             }
             if (Keyboard.GetState().IsKeyUp(Keys.G))
             {
                 spawnedCookie = false;
             }
             #endregion
-
-            //Feña programa de aqui para abajo
 
         }
 
