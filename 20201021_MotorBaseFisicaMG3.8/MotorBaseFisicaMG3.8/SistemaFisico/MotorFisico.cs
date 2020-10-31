@@ -12,8 +12,8 @@ namespace MotorBaseFisicaMG38.SistemaFisico
     { 
         public static float WorldSizeScale = 100f;
         public static Vector2 Gravity = new Vector2(0, 9.8f);
-        public static float Roce = 0f;
-        public static float RoceAire = 0f;
+        public static float Roce = .1f;
+        public static float RoceAire = .1f;
         public static List<ObjetoFisico> objetosFisicos = new List<ObjetoFisico>();
         public static void agregarObjetoFisico(ObjetoFisico of)
         {
@@ -37,7 +37,7 @@ namespace MotorBaseFisicaMG38.SistemaFisico
                     ObjetoFisico objetoA = objetosFisicos[i];
                     ObjetoFisico objetoB = objetosFisicos[j];
                     Vector2 collisionPoint;
-                    if (objetoA.Colisiona(objetoB, out collisionPoint))
+                    if ((!objetoA.isStatic || !objetoB.isStatic) && objetoA.Colisiona(objetoB, out collisionPoint))
                     {
                         if(objetoA.OnCollision !=null && objetoB.GetObject != null)
                         {
@@ -56,9 +56,11 @@ namespace MotorBaseFisicaMG38.SistemaFisico
                             Vector2 CentrosAB = collisionPoint - objetoA.pos;
                             Vector2 CentrosBA = collisionPoint - objetoB.pos;                           
                             {
-                                Vector2 velA = ((objetoA.vel+objetoA.prevVel)/2)*(1-objetoA.absorcionChoque);
+                                Vector2 velA = ((objetoA.vel + objetoA.prevVel) / 2);
+                                objetoA.vel = velA;
                                 //Debug.WriteLine("Velocidad Entrada" + velA);
-                                Vector2 velB = ((objetoB.vel+objetoB.prevVel)/2)*(1-objetoB.absorcionChoque);
+                                Vector2 velB = ((objetoB.vel+objetoB.prevVel)/2);
+                                objetoB.vel = velB;
                                 //No olvidar verificar que la dirección lleva a un acercamiento, si se están alejando
                                 //no debemos calcular equilibrio de fuerzas
                                 double angleAB = AngleBetween(objetoA.vel, CentrosAB);
@@ -69,19 +71,21 @@ namespace MotorBaseFisicaMG38.SistemaFisico
                                     CentrosAB.Normalize();
                                     //Descomponemos la velocidad de A en 2 fuerzas en base a la colisión
                                     FuerzaAB = CentrosAB * (float)Math.Cos(angleAB) * velA.Length() * objetoA.masa;
-                                    FuerzaBA = velA * objetoA.masa - FuerzaAB;
-                                    objetoA.vel -= objetoA.vel;
+                                    FuerzaBA = (velA * objetoA.masa - FuerzaAB) * (1 - objetoB.absorcionChoque);
+                                    FuerzaAB *= (1 - objetoA.absorcionChoque);
+                                    objetoA.vel -= velA;
                                     if (objetoB.isStatic)
                                     {
-                                        objetoA.AplicaFuerza(-FuerzaAB, 1, true);
+                                        objetoA.AplicaFuerza(-FuerzaAB, 1, collisionPoint, true, true); 
                                         //Debug.WriteLine("FuerzaAB" + -FuerzaAB);
-                                        objetoA.AplicaFuerza(FuerzaBA, 1, true);
+                                        objetoA.AplicaFuerza(FuerzaBA, 1, collisionPoint, true, true);
                                         //Debug.WriteLine("FuerzaBA" + FuerzaBA);
                                     }
                                     else
                                     {
-                                        objetoB.AplicaFuerza(FuerzaAB, 1, true);
-                                        objetoA.AplicaFuerza(FuerzaBA, 1, true);
+                                        objetoB.AplicaFuerza(FuerzaAB, 1, collisionPoint, true, true);
+                                        objetoA.AplicaFuerza(FuerzaBA, 1, collisionPoint, true, true);
+
                                     }
                                 }                                                           
                              
@@ -92,17 +96,18 @@ namespace MotorBaseFisicaMG38.SistemaFisico
                                 {
                                     CentrosBA.Normalize();
                                     FuerzaBA = CentrosBA * (float)Math.Cos(angleBA) * velB.Length() * objetoB.masa;
-                                    FuerzaAB = velB * objetoB.masa - FuerzaBA;                                    
-                                    objetoB.vel -= objetoB.vel;
+                                    FuerzaAB = (velB * objetoB.masa - FuerzaBA) * (1 - objetoA.absorcionChoque);
+                                    FuerzaBA *= (1 - objetoB.absorcionChoque);
+                                    objetoB.vel -= velB;
                                     if (objetoA.isStatic)
                                     {
-                                        objetoB.AplicaFuerza(FuerzaAB, 1, true);
-                                        objetoB.AplicaFuerza(-FuerzaBA, 1, true);
+                                        objetoB.AplicaFuerza(FuerzaAB, 1, collisionPoint, true, true);
+                                        objetoB.AplicaFuerza(-FuerzaBA, 1, collisionPoint, true, true);
                                     }
                                     else
                                     {
-                                        objetoB.AplicaFuerza(FuerzaAB, 1, true);
-                                        objetoA.AplicaFuerza(FuerzaBA, 1, true);
+                                        objetoB.AplicaFuerza(FuerzaAB, 1, collisionPoint, true, true);
+                                        objetoA.AplicaFuerza(FuerzaBA, 1, collisionPoint, true, true);
                                     }
                                 }
                             }                            
@@ -113,9 +118,15 @@ namespace MotorBaseFisicaMG38.SistemaFisico
             foreach (ObjetoFisico of in objetosFisicos)
             {                
                 if (!of.isStatic)
-                {
+                {                   
                     float tiempo = (float)gameTime.ElapsedGameTime.TotalSeconds;
                     of.AplicaFuerza(Gravity * of.masa, tiempo);
+                    if (of.lastCollision != null)
+                    {
+                        Vector2 normal = new Vector2(MathF.Sin(of.lastCollision.rot), MathF.Cos(of.lastCollision.rot));
+                        Debug.WriteLine(normal);
+                        of.AplicaFuerza(normal * of.masa, tiempo);
+                    }
                     of.Update(tiempo);
                 }
             }

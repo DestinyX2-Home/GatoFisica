@@ -12,6 +12,7 @@ namespace MotorBaseFisicaMG38.SistemaDibujado
     {
         private Texture2D textura;
         public Vector2 pos;
+        public string name;
         private Vector2 centro;
         public float escala;
         public int ancho { get { return (int)(this.textura.Width * this.escala); } set{ escala = this.textura.Width/value; }}
@@ -23,6 +24,7 @@ namespace MotorBaseFisicaMG38.SistemaDibujado
             this.pos = pos;
             this.escala = escala;
             this.textura = Game1.INSTANCE.Content.Load<Texture2D>(texturaNombre);
+            this.name = texturaNombre;
             Escena.INSTANCIA.agregarDib(this);
             this.centro = new Vector2(this.textura.Width / 2, this.textura.Height / 2);
         }

@@ -30,9 +30,13 @@ namespace MotorBaseFisicaMG38.MyGame
             camara = new Camara(new Vector2(400 / 300), 1, 0);
             camara.HacerActiva();
             circulo = new UTGameObject("meow_cookie", new Vector2(400, 200), .2f, UTGameObject.FF_form.Circulo);
-            circulo.objetoFisico.absorcionChoque = .1f;
+            circulo.objetoFisico.absorcionChoque = .5f;
+            UTGameObject platform = new UTGameObject("Muro", new Vector2(400, 255),.5f, UTGameObject.FF_form.Rectangulo, true);
+            platform.objetoFisico.absorcionChoque = .5f;
+            platform.rot = 45 * 2 * (float)Math.PI / 360;
             superior = new UTGameObject("Colsion1", new Vector2(150, -10), 3f, UTGameObject.FF_form.Rectangulo, true);
-            inferior = new UTGameObject("Colsion1", new Vector2(150, 450), 3f, UTGameObject.FF_form.Rectangulo, true);
+            //inferior = new UTGameObject("Colsion1", new Vector2(150, 450), 3f, UTGameObject.FF_form.Rectangulo, true);
+            //inferior.objetoFisico.absorcionChoque = 0f;
             izquierdo = new UTGameObject("Collision2", new Vector2(20, 220), 1f, UTGameObject.FF_form.Rectangulo, true);
             derecho = new UTGameObject("Collision2", new Vector2(780, 220), 1f, UTGameObject.FF_form.Rectangulo, true);
 
@@ -90,14 +94,7 @@ namespace MotorBaseFisicaMG38.MyGame
             if (Keyboard.GetState().IsKeyDown(Keys.G) && !spawnedCookie)
             {
                 new UTGameObject("meow_cookie", camara.PosMouseEnCamara(), .2f, UTGameObject.FF_form.Circulo);
-                spawnedCookie = true;
-
-                float angle = MathF.Atan(1.2f);
-                
-                Debug.WriteLine(MathF.Sin(angle));
-                Debug.WriteLine(MathF.Cos(angle));
-
-
+                spawnedCookie = true;               
             }
             if (Keyboard.GetState().IsKeyUp(Keys.G))
             {

@@ -14,8 +14,11 @@ namespace MotorBaseFisicaMG38.SistemaFisico
         public Dibujable dibujable;
         public bool isStatic = false;
         public bool isTrigger = false;
-        public float absorcionChoque = 1f;
+        public float absorcionChoque = 0.9f;
         public float rot { get { return dibujable.rot; } set { dibujable.rot = value; } }
+        public float rotFuerza;
+        public float rotVel;
+        public float rotRoce = 1f;
         public Vector2 pos { get { return dibujable.pos; } set{dibujable.pos = value; } }
         private Vector2 prevPos;
         public Vector2 vel { get; set; }
@@ -28,6 +31,7 @@ namespace MotorBaseFisicaMG38.SistemaFisico
         public delegate Object GetObjectDelegate();
         public OnCollisionDelegate OnCollision;
         public GetObjectDelegate GetObject;
+        public ObjetoFisico lastCollision = null;
 
         public class FFOffset
         {
@@ -50,6 +54,10 @@ namespace MotorBaseFisicaMG38.SistemaFisico
             //{
                 vel += newVel;
             //}
+        }
+        public void SumarVelocidadAngular(float rotVel)
+        {
+            this.rotVel += rotVel;
         }
         public void SetVelocity(Vector2 newVel)
         {
@@ -78,32 +86,47 @@ namespace MotorBaseFisicaMG38.SistemaFisico
         }
         public bool Colisiona(ObjetoFisico otro, out Vector2 collisionPoint)
         {
-            collisionPoint = Vector2.Zero;
+            collisionPoint = Vector2.Zero;          
             foreach (FFOffset ffo in formasFisicasOffset)
             {
                 //Esta linea actualiza la posición de la forma física
                 ffo.ff.pos = pos + Rotate(ffo.offset, rot);
+                ffo.ff.rot = rot;
 
                 //Se verifica la colición entre formas físicas de este objeto físico y otro.
                 foreach(FFOffset otro_ffo in otro.formasFisicasOffset)
                 {
                     otro_ffo.ff.pos = otro.pos + Rotate(otro_ffo.offset, otro.rot);
+                    otro_ffo.ff.rot = otro.rot;
                     if (otro_ffo.ff.colisiona(ffo.ff, out collisionPoint))
                     {
-                        return true;
+                        lastCollision = otro;
+                        return true;                      
                     }
                 }
             }
             return false;
         }
-        public void AplicaFuerza(Vector2 fuerza,float deltaTiempoSeg, bool forceVel = false)
+        public void AplicaFuerza(Vector2 fuerza, float deltaTiempoSeg, bool forceVel = false, bool rotar = false)
+        {
+            AplicaFuerza(fuerza, deltaTiempoSeg, Vector2.Zero, forceVel, rotar);
+        }
+        public void AplicaFuerza(Vector2 fuerza, float deltaTiempoSeg, Vector2 puntoCol, bool forceVel = false, bool rotar = true)
         {
             if (forceVel)
             {
-                forcedAcel += (fuerza / masa);
+                forcedAcel += (fuerza / masa);              
+                if (rotar)
+                {
+                    Vector2 puntoFuerzaRot = puntoCol - pos;
+                    float sumVel = (float)MotorFisico.AngleBetween(fuerza, puntoFuerzaRot);                    
+                    sumVel *= fuerza.Length();                    
+                    rotVel += sumVel/3;                    
+                }
                 return;
             }
-            acel += (fuerza / masa);                                               
+            acel += (fuerza / masa);
+            
         }
         public void Update(float deltaTiempoSeg)
         {
@@ -126,8 +149,18 @@ namespace MotorBaseFisicaMG38.SistemaFisico
             {
                 pos += ((prevVel + vel) / 2) * deltaTiempoSeg * MotorFisico.WorldSizeScale;
             }
+
             vel -= vel * (MotorFisico.RoceAire)*deltaTiempoSeg;            
-            forcedAcel = acel = Vector2.Zero;                                          
+            forcedAcel = acel = Vector2.Zero;
+            rot += rotVel * deltaTiempoSeg;
+            rotVel -= rotVel * rotRoce * deltaTiempoSeg;
+            if (lastCollision != null)
+            {
+                if (Math.Sqrt((pos - lastCollision.pos).LengthSquared()) > dibujable.ancho / 2)
+                {
+                    lastCollision = null;
+                }
+            }
         }
         public void Destruir()
         {

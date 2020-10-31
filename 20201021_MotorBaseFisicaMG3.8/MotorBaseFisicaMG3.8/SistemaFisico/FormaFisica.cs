@@ -10,6 +10,7 @@ namespace MotorBaseFisicaMG38.SistemaFisico
     public abstract class FormaFisica
     {
         public Vector2 pos;
+        public float rot;
         public abstract bool colisiona(FormaFisica otra, out Vector2 collisionPoint);
     }
 }
