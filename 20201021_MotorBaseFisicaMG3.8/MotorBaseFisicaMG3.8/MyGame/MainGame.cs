@@ -8,6 +8,7 @@ using MotorBaseFisicaMG38.MyGame.Components;
 using MotorBaseFisicaMG38.SistemaDibujado;
 using MotorBaseFisicaMG38.SistemaFisico;
 using MotorBaseFisicaMG38.SistemaGameObject;
+using MotorBaseFisicaMG38.SistemaGO;
 
 namespace MotorBaseFisicaMG38.MyGame
 {
@@ -35,10 +36,11 @@ namespace MotorBaseFisicaMG38.MyGame
             platform.objetoFisico.absorcionChoque = .5f;
             platform.rot = 45 * 2 * (float)Math.PI / 360;
             superior = new UTGameObject("Colsion1", new Vector2(150, -10), 3f, UTGameObject.FF_form.Rectangulo, true);
-            //inferior = new UTGameObject("Colsion1", new Vector2(150, 450), 3f, UTGameObject.FF_form.Rectangulo, true);
-            //inferior.objetoFisico.absorcionChoque = 0f;
+            inferior = new UTGameObject("Colsion1", new Vector2(150, 450), 3f, UTGameObject.FF_form.Rectangulo, true);
+            inferior.objetoFisico.absorcionChoque = 0f;
             izquierdo = new UTGameObject("Collision2", new Vector2(20, 220), 1f, UTGameObject.FF_form.Rectangulo, true);
             derecho = new UTGameObject("Collision2", new Vector2(780, 220), 1f, UTGameObject.FF_form.Rectangulo, true);
+            Resorte resorte = new Resorte(.1f, "resorte2", new Vector2(500, 350), .3f, UTGameObject.FF_form.Rectangulo, true);
 
             //position1 = new Vector2(0, 0);
         }

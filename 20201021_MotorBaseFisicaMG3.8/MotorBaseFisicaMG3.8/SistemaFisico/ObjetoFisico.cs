@@ -50,10 +50,7 @@ namespace MotorBaseFisicaMG38.SistemaFisico
         }
         public void AddVelocity(Vector2 newVel)
         {
-            //if (!isColliding)
-            //{
                 vel += newVel;
-            //}
         }
         public void SumarVelocidadAngular(float rotVel)
         {
