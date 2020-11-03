@@ -191,6 +191,7 @@ namespace MotorBaseFisicaMG38
                         };
                         backButton.Click += LoadMainMenu;
                         instructions.components.Add(backButton);
+                        instructions.dibujables.Add(new Dibujable("Recurso 1", new Vector2(400, 240), .9f));
                     }
                     break;
                 case 3:
