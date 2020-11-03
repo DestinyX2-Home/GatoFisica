@@ -206,7 +206,7 @@ namespace MotorBaseFisicaMG38
                         {
                             Scale = 1f,
                             Position = new Vector2(400 - Content.Load<Texture2D>("borde3").Width / 2, 400),
-                            Text = "Discord Salon 15",
+                            Text = "Team 15\nDiscord Salon 15",
                         };
                         backButton.Click += LoadMainMenu;
                         credits.components.Add(backButton);

@@ -20,27 +20,21 @@ namespace MotorBaseFisicaMG38.MyGame
         float rotationScale = .5f;
         float cameraMovementSpeed = 400f;
         UTGameObject circulo;
-        public UTGameObject superior;
-        public UTGameObject inferior;
-        public UTGameObject izquierdo;
-        public UTGameObject derecho;
+        public Resorte resorte;
         public bool spawnedCookie = false;
 
         public MainGame()
         {
             camara = new Camara(new Vector2(400 / 300), 1, 0);
             camara.HacerActiva();
-            circulo = new UTGameObject("meow_cookie", new Vector2(400, 200), .2f, UTGameObject.FF_form.Circulo);
+            circulo = new UTGameObject("meow_cookie", new Vector2(300, 80), .2f, UTGameObject.FF_form.Circulo);
             circulo.objetoFisico.absorcionChoque = .5f;
-            UTGameObject platform = new UTGameObject("Muro", new Vector2(400, 255),.5f, UTGameObject.FF_form.Rectangulo, true);
-            platform.objetoFisico.absorcionChoque = .5f;
-            platform.rot = 45 * 2 * (float)Math.PI / 360;
-            superior = new UTGameObject("Colsion1", new Vector2(150, -10), 3f, UTGameObject.FF_form.Rectangulo, true);
-            inferior = new UTGameObject("Colsion1", new Vector2(150, 450), 3f, UTGameObject.FF_form.Rectangulo, true);
-            inferior.objetoFisico.absorcionChoque = 0f;
-            izquierdo = new UTGameObject("Collision2", new Vector2(20, 220), 1f, UTGameObject.FF_form.Rectangulo, true);
-            derecho = new UTGameObject("Collision2", new Vector2(780, 220), 1f, UTGameObject.FF_form.Rectangulo, true);
-            Resorte resorte = new Resorte(.1f, "resorte2", new Vector2(500, 350), .3f, UTGameObject.FF_form.Rectangulo, true);
+            UTGameObject platform = new UTGameObject("Muro", new Vector2(300, 155),.5f, UTGameObject.FF_form.Rectangulo, true);
+            platform.objetoFisico.absorcionChoque = .6f;
+            platform.rot = 30 * 2 * (float)Math.PI / 360;
+
+            resorte = new Resorte(.1f, "resorte2", new Vector2(380, 400), .3f, UTGameObject.FF_form.Rectangulo, true);
+            resorte.rot = 20 * 2 * (float)Math.PI / 360;
 
             //position1 = new Vector2(0, 0);
         }
@@ -101,6 +95,10 @@ namespace MotorBaseFisicaMG38.MyGame
             if (Keyboard.GetState().IsKeyUp(Keys.G))
             {
                 spawnedCookie = false;
+            }
+            if(Keyboard.GetState().IsKeyDown(Keys.F))
+            {
+                resorte.Launch();
             }
             #endregion
 

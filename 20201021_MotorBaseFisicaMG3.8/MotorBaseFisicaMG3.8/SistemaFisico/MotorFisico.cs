@@ -124,7 +124,6 @@ namespace MotorBaseFisicaMG38.SistemaFisico
                     if (of.lastCollision != null)
                     {
                         Vector2 normal = new Vector2(MathF.Sin(of.lastCollision.rot), MathF.Cos(of.lastCollision.rot));
-                        Debug.WriteLine(normal);
                         of.AplicaFuerza(normal * of.masa, tiempo);
                     }
                     of.Update(tiempo);
