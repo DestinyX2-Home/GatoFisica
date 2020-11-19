@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/cvene/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/Collision2.png</SourceFile>
-  <SourceTime>2020-10-14T13:27:20.7700772-03:00</SourceTime>
-  <DestFile>C:/Users/cvene/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/bin/Windows/Collision2.xnb</DestFile>
-  <DestTime>2020-11-16T18:20:57.0852573-03:00</DestTime>
+  <SourceFile>C:/Users/cvene/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/eslabon1.png</SourceFile>
+  <SourceTime>2020-11-16T17:54:18.3988849-03:00</SourceTime>
+  <DestFile>C:/Users/cvene/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/bin/Windows/eslabon1.xnb</DestFile>
+  <DestTime>2020-11-16T18:20:57.2478231-03:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T13:35:54-03:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

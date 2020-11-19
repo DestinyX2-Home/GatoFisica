@@ -18,7 +18,8 @@ namespace MotorBaseFisicaMG38
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Escena escena;
-
+        Texture2D eslabon1;
+        Texture2D eslabon2;
         public static Game1 INSTANCE;
         public Game1()
         {
@@ -49,6 +50,8 @@ namespace MotorBaseFisicaMG38
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            eslabon1 = Content.Load<Texture2D>("eslabon1");
+            eslabon2 = Content.Load<Texture2D>("eslabon2");
             CreateScene(0);
 
             // TODO: use this.Content to load your game content here
@@ -145,7 +148,8 @@ namespace MotorBaseFisicaMG38
                     break;
                 case 1:
                     {
-                        MainGame game = new MainGame();
+                        MainGame game = new MainGame(eslabon1,eslabon2,spriteBatch);
+
                         Button backMenu = new Button(Content.Load<Texture2D>("Button1"), Content.Load<SpriteFont>("Font"))
                         {
                             Scale = .3f,
@@ -178,6 +182,7 @@ namespace MotorBaseFisicaMG38
                         game.components.Add(backMenu);
                         game.components.Add(resetButton);
                         game.components.Add(text1);
+                        escena = game;
                     }
                     break;
                 case 2:
@@ -214,6 +219,8 @@ namespace MotorBaseFisicaMG38
                         credits.components.Add(text1);
                         credits.dibujables.Add(new Dibujable("creditos", new Vector2(400, 210), .85f));
                     }
+                    break;
+                case 4:
                     break;
                 default:
                     Console.WriteLine("uwu");

@@ -9,7 +9,7 @@ using MotorBaseFisicaMG38.SistemaGameObject;
 
 namespace MotorBaseFisicaMG38.SistemaGO
 {
-    class Resorte :UTGameObject
+    class Resorte : UTGameObject
     {
         float longitud;
         Vector2 deformacion;

@@ -9,6 +9,7 @@ using MotorBaseFisicaMG38.SistemaDibujado;
 using MotorBaseFisicaMG38.SistemaFisico;
 using MotorBaseFisicaMG38.SistemaGameObject;
 using MotorBaseFisicaMG38.SistemaGO;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace MotorBaseFisicaMG38.MyGame
 {
@@ -22,8 +23,9 @@ namespace MotorBaseFisicaMG38.MyGame
         UTGameObject circulo;
         public Resorte resorte;
         public bool spawnedCookie = false;
+        public Eslabon eslabon;
 
-        public MainGame()
+        public MainGame(Texture2D lb1,Texture2D lb2,SpriteBatch batch)
         {
             camara = new Camara(new Vector2(400 / 300), 1, 0);
             camara.HacerActiva();
@@ -36,13 +38,15 @@ namespace MotorBaseFisicaMG38.MyGame
             resorte = new Resorte(.1f, "resorte2", new Vector2(380, 400), .3f, UTGameObject.FF_form.Rectangulo, true);
             resorte.rot = 20 * 2 * (float)Math.PI / 360;
 
-            //position1 = new Vector2(0, 0);
+            eslabon = new Eslabon(new Vector2(100, 100), new Vector2(100, 140),"eslabon1",true);
+            eslabon.CreateChain(4);
         }
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
             _previousState = _currentState;
             _currentState = Mouse.GetState();
+            eslabon.Update(gameTime);
             if (_currentState.LeftButton == ButtonState.Released && _previousState.LeftButton == ButtonState.Pressed)
             {
                 MouseForce(gameTime);
@@ -108,7 +112,6 @@ namespace MotorBaseFisicaMG38.MyGame
         {
             TextDisplayer text = components[^1] as TextDisplayer;
 
-            Vector2 distance = new Vector2((int)(camara.PosMouseEnCamara().X - circulo.objetoFisico.pos.X), (int)(camara.PosMouseEnCamara().Y - circulo.objetoFisico.pos.Y));
 
             Vector2 vec = new Vector2((float)Math.Round(circulo.objetoFisico.vel.X, 3), (float)Math.Round(circulo.objetoFisico.vel.Y, 3));
 
@@ -117,10 +120,6 @@ namespace MotorBaseFisicaMG38.MyGame
             double mag = Math.Sqrt(Math.Pow(vec.X, 2) + Math.Pow(vec.Y, 2));
 
             text.ChangeText("Velocidad: " + vec + "\nMagnitud: " + Math.Round(mag, 3) + "\nDireccion: " + dir + "\nRoce: " + MotorFisico.Roce);
-
-            TextDisplayer txt = components[0] as TextDisplayer;
-            txt.Position = _currentState.Position.ToVector2() - new Vector2(txt.stringSize().X / 2, 0);
-            txt.ChangeText("Fuerza: " + distance);
         }
 
         public void MouseForce(GameTime time)

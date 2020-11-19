@@ -179,3 +179,5 @@ C:\Users\cvene\Documents\GitHub\GatoFisica\20201021_MotorBaseFisicaMG3.8\MotorBa
 C:\Users\cvene\Documents\GitHub\GatoFisica\20201021_MotorBaseFisicaMG3.8\MotorBaseFisicaMG3.8\bin\Debug\netcoreapp3.1\Content\creditos.xnb
 C:\Users\cvene\Documents\GitHub\GatoFisica\20201021_MotorBaseFisicaMG3.8\MotorBaseFisicaMG3.8\bin\Debug\netcoreapp3.1\Content\resorte2.xnb
 C:\Users\cvene\Documents\GitHub\GatoFisica\20201021_MotorBaseFisicaMG3.8\MotorBaseFisicaMG3.8\bin\Debug\netcoreapp3.1\Content\Recurso 1.xnb
+C:\Users\cvene\Documents\GitHub\GatoFisica\20201021_MotorBaseFisicaMG3.8\MotorBaseFisicaMG3.8\bin\Debug\netcoreapp3.1\Content\eslabon1.xnb
+C:\Users\cvene\Documents\GitHub\GatoFisica\20201021_MotorBaseFisicaMG3.8\MotorBaseFisicaMG3.8\bin\Debug\netcoreapp3.1\Content\eslabon2.xnb
