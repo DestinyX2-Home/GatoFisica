@@ -50,6 +50,24 @@ namespace MotorBaseFisicaMG38.MyGame
             base.Update(gameTime);
             _previousState = _currentState;
             _currentState = Mouse.GetState();
+
+            if (Keyboard.GetState().IsKeyDown(Keys.A))
+            {
+                eslabon.MoveLast(new Vector2(-1, 0));
+            }
+            if (Keyboard.GetState().IsKeyDown(Keys.D))
+            {
+                eslabon.MoveLast(new Vector2(1, 0));
+            }
+            if (Keyboard.GetState().IsKeyDown(Keys.W))
+            {
+                eslabon.MoveLast(new Vector2(0, -1));
+            }
+            if (Keyboard.GetState().IsKeyDown(Keys.S))
+            {
+                eslabon.MoveLast(new Vector2(0, 1));
+            }
+
             eslabon.Update(gameTime);
             if (_currentState.LeftButton == ButtonState.Released && _previousState.LeftButton == ButtonState.Pressed)
             {

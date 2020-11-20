@@ -30,46 +30,48 @@ namespace MotorBaseFisicaMG38.SistemaGO
             lp1 = p1;
             lp2 = p2;
             fix = fixd;
-            texture = new Dibujable(textureName, (p2+p1)/2, 1);
+            texture = new Dibujable(textureName, (p2 + p1) / 2, 1);
             texture.rot = (float)Math.Atan((p2.Y - p1.Y) / (p2.X - p1.X));
-            lenght = texture.ancho-15;
+            lenght = texture.ancho - 15;
         }
 
         public void Update(GameTime gameTime)
         {
             float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
             MovePoints(elapsed);
-            ConstraintPoints();
+            //ConstraintPoints();
+
+            texture.rot = (float)Math.Atan((p2.Y - p1.Y) / (p2.X - p1.X));
+            texture.pos = (p2 + p1) / 2;
+
             UpdateNext(gameTime);
         }
 
-        public void ConstraintPoints()
-        {
-            if(DistanceBetween(p1,p2) > lenght)
-            {
-                p2.Y -= (DistanceBetween(p1, p2) - lenght);
-            }
-        }
+
         public void MovePoints(float time)
         {
-            if(!fix)
+            var dy = ((p2 - lp2) / 4) * 3;
+            lp1 = p1;
+            lp2 = p2;
+
+
+            if (!fix)
             {
-                p1 += MotorFisico.Gravity * time;
-                p2 += MotorFisico.Gravity * time;
+                if (prev != null)
+                {
+                    prev.p2 = p1;
+                }
+                if (next != null)
+                {
+                    p2 = next.p1;
+                }
+                p1 += dy;
             }
-            else
-            {
-                p2 += MotorFisico.Gravity * time;
-            }
-            if(prev!=null)
-            {
-                p1 = prev.p2;
-            }
-            texture.pos = (p2 + p1) / 2;
+
         }
         public void UpdateNext(GameTime gameTime)
         {
-            if(next!=null)
+            if (next != null)
             {
                 next.Update(gameTime);
             }
@@ -78,10 +80,12 @@ namespace MotorBaseFisicaMG38.SistemaGO
         public void CreateChain(int lengt)
         {
             Eslabon current = this;
+
             int tipe = 2;
-            for(int i = 0; i < lengt; i++)
+
+            for (int i = 0; i < lengt; i++)
             {
-                if(tipe == 2)
+                if (tipe == 2)
                 {
                     current.next = new Eslabon(current.p2, new Vector2(current.p2.X, current.p2.Y + current.lenght), "eslabon2");
                     tipe = 1;
@@ -93,13 +97,38 @@ namespace MotorBaseFisicaMG38.SistemaGO
                 }
                 current.next.prev = current;
                 current = current.next;
-                
+
             }
         }
+
         public float DistanceBetween(Vector2 p1, Vector2 p2)
         {
             float dist = (float)Math.Sqrt(Math.Pow(p2.X - p1.X, 2) + Math.Pow(p2.Y - p1.Y, 2));
             return dist;
+        }
+        public void MovePrevs(Vector2 force, Eslabon first)
+        {
+            Eslabon toMove = first;
+            if (toMove.prev != null)
+                AddForce(toMove.prev, force);
+        }
+        public void AddForce(Eslabon slb, Vector2 force)
+        {
+            if (DistanceBetween(slb.p1, slb.p2 + force * 2) < lenght + 10)
+            {
+                slb.p2 += force * 2;
+                MovePrevs(force, slb);
+            }
+        }
+        public void MoveLast(Vector2 move)
+        {
+            Eslabon slb = this;
+            while (slb.next != null)
+            {
+                slb = slb.next;
+            }
+            AddForce(slb, move);
+
         }
     }
 }
