@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/cvene/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/meow_cookie.png</SourceFile>
-  <SourceTime>2020-05-16T00:24:39.3451522-04:00</SourceTime>
-  <DestFile>C:/Users/cvene/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/bin/Windows/Content/meow_cookie.xnb</DestFile>
-  <DestTime>2020-10-21T12:39:08.2692842-03:00</DestTime>
+  <SourceFile>C:/Users/yamif/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/meow_cookie.png</SourceFile>
+  <SourceTime>2020-11-02T17:01:55.3400045-03:00</SourceTime>
+  <DestFile>C:/Users/yamif/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/bin/Windows/Content/meow_cookie.xnb</DestFile>
+  <DestTime>2020-11-20T16:30:36.5782465-03:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2020-08-10T16:17:54-04:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

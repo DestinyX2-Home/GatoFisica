@@ -35,7 +35,7 @@ namespace MotorBaseFisicaMG38.SistemaGO
         public Vector2 FuerzaResorte(Vector2 obj)
         {
             Vector2 lambdaX = Vector2.Subtract(position, deformacion);
-            Vector2 launchAngle = new Vector2(MathF.Sin(toLaunch.rot), MathF.Cos(toLaunch.rot));
+            Vector2 launchAngle = new Vector2(MathF.Sin(-objetoFisico.rot), MathF.Cos(-objetoFisico.rot));
             return launchAngle * lambdaX *-1;
         }
         public override void OnCollision(UTGameObject other)

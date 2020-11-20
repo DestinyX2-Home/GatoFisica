@@ -35,6 +35,10 @@ namespace MotorBaseFisicaMG38.MyGame
             platform.objetoFisico.absorcionChoque = .6f;
             platform.rot = 30 * 2 * (float)Math.PI / 360;
 
+            UTGameObject platform2 = new UTGameObject("Muro", new Vector2(700, 301), .5f, UTGameObject.FF_form.Rectangulo, true);
+            platform2.objetoFisico.absorcionChoque = .6f;
+
+
             resorte = new Resorte(.1f, "resorte2", new Vector2(380, 400), .3f, UTGameObject.FF_form.Rectangulo, true);
             resorte.rot = 20 * 2 * (float)Math.PI / 360;
 

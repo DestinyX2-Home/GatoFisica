@@ -14,7 +14,7 @@ namespace MotorBaseFisicaMG38.SistemaFisico
         public Dibujable dibujable;
         public bool isStatic = false;
         public bool isTrigger = false;
-        public float absorcionChoque = 0.9f;
+        public float absorcionChoque = .5f;
         public float rot { get { return dibujable.rot; } set { dibujable.rot = value; } }
         public float rotFuerza;
         public float rotVel;

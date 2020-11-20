@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/cvene/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/Locations_Happy Village (loop).ogg</SourceFile>
-  <SourceTime>2019-07-14T16:14:30-04:00</SourceTime>
-  <DestFile>C:/Users/cvene/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/bin/Windows/Content/Locations_Happy Village (loop).xnb</DestFile>
-  <DestTime>2020-10-21T12:39:08.2603078-03:00</DestTime>
+  <SourceFile>C:/Users/yamif/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/Locations_Happy Village (loop).ogg</SourceFile>
+  <SourceTime>2020-11-02T17:01:55.2506429-03:00</SourceTime>
+  <DestFile>C:/Users/yamif/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/bin/Windows/Content/Locations_Happy Village (loop).xnb</DestFile>
+  <DestTime>2020-11-20T16:30:36.5692705-03:00</DestTime>
   <Importer>OggImporter</Importer>
   <ImporterTime>2020-08-10T16:17:54-04:00</ImporterTime>
   <Processor>SongProcessor</Processor>
@@ -15,6 +15,6 @@
   <Dependencies />
   <BuildAsset />
   <BuildOutput>
-    <string>C:/Users/cvene/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/bin/Windows/Content/Locations_Happy Village (loop).wma</string>
+    <string>C:/Users/yamif/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/bin/Windows/Content/Locations_Happy Village (loop).wma</string>
   </BuildOutput>
 </PipelineBuildEvent>
