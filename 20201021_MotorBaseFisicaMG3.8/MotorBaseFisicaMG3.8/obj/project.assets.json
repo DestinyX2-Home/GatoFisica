@@ -7373,19 +7373,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\yamif\\.nuget\\packages\\": {}
+    "C:\\Users\\cvene\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\yamif\\Documents\\GitHub\\GatoFisica\\20201021_MotorBaseFisicaMG3.8\\MotorBaseFisicaMG3.8\\MotorBaseFisicaMG38.csproj",
+      "projectUniqueName": "C:\\Users\\cvene\\Documents\\GitHub\\GatoFisica\\20201021_MotorBaseFisicaMG3.8\\MotorBaseFisicaMG3.8\\MotorBaseFisicaMG38.csproj",
       "projectName": "MotorBaseFisicaMG38",
-      "projectPath": "C:\\Users\\yamif\\Documents\\GitHub\\GatoFisica\\20201021_MotorBaseFisicaMG3.8\\MotorBaseFisicaMG3.8\\MotorBaseFisicaMG38.csproj",
-      "packagesPath": "C:\\Users\\yamif\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\yamif\\Documents\\GitHub\\GatoFisica\\20201021_MotorBaseFisicaMG3.8\\MotorBaseFisicaMG3.8\\obj\\",
+      "projectPath": "C:\\Users\\cvene\\Documents\\GitHub\\GatoFisica\\20201021_MotorBaseFisicaMG3.8\\MotorBaseFisicaMG3.8\\MotorBaseFisicaMG38.csproj",
+      "packagesPath": "C:\\Users\\cvene\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\cvene\\Documents\\GitHub\\GatoFisica\\20201021_MotorBaseFisicaMG3.8\\MotorBaseFisicaMG3.8\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\yamif\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\cvene\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

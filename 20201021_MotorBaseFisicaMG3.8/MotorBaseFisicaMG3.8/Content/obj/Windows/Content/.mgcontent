@@ -4,26 +4,26 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/yamif/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/Autito.png</File>
-    <File>C:/Users/yamif/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/borde1.png</File>
-    <File>C:/Users/yamif/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/borde2.png</File>
-    <File>C:/Users/yamif/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/borde3.png</File>
-    <File>C:/Users/yamif/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/Button1.png</File>
-    <File>C:/Users/yamif/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/Button2.png</File>
-    <File>C:/Users/yamif/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/Collision2.png</File>
-    <File>C:/Users/yamif/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/Collision3.png</File>
-    <File>C:/Users/yamif/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/Colsion1.png</File>
-    <File>C:/Users/yamif/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/creditos.png</File>
-    <File>C:/Users/yamif/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/eslabon1.png</File>
-    <File>C:/Users/yamif/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/eslabon2.png</File>
-    <File>C:/Users/yamif/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/etfx_shoot_mystic.wav</File>
-    <File>C:/Users/yamif/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/Font.spritefont</File>
-    <File>C:/Users/yamif/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/Locations_Happy Village (loop).ogg</File>
-    <File>C:/Users/yamif/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/meow_cookie.png</File>
-    <File>C:/Users/yamif/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/Muro.png</File>
-    <File>C:/Users/yamif/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/Recurso 1.png</File>
-    <File>C:/Users/yamif/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/resorte2.png</File>
-    <File>C:/Users/yamif/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/Sin.png</File>
+    <File>C:/Users/cvene/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/Autito.png</File>
+    <File>C:/Users/cvene/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/borde1.png</File>
+    <File>C:/Users/cvene/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/borde2.png</File>
+    <File>C:/Users/cvene/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/borde3.png</File>
+    <File>C:/Users/cvene/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/Button1.png</File>
+    <File>C:/Users/cvene/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/Button2.png</File>
+    <File>C:/Users/cvene/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/Collision2.png</File>
+    <File>C:/Users/cvene/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/Collision3.png</File>
+    <File>C:/Users/cvene/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/Colsion1.png</File>
+    <File>C:/Users/cvene/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/creditos.png</File>
+    <File>C:/Users/cvene/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/eslabon1.png</File>
+    <File>C:/Users/cvene/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/eslabon2.png</File>
+    <File>C:/Users/cvene/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/etfx_shoot_mystic.wav</File>
+    <File>C:/Users/cvene/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/Font.spritefont</File>
+    <File>C:/Users/cvene/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/Locations_Happy Village (loop).ogg</File>
+    <File>C:/Users/cvene/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/meow_cookie.png</File>
+    <File>C:/Users/cvene/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/Muro.png</File>
+    <File>C:/Users/cvene/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/Recurso 1.png</File>
+    <File>C:/Users/cvene/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/resorte2.png</File>
+    <File>C:/Users/cvene/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/Sin.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />

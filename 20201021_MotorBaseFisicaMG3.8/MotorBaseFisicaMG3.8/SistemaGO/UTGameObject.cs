@@ -15,6 +15,7 @@ namespace MotorBaseFisicaMG38.SistemaGameObject
         public Dibujable dibujable;
         public float rot { get { return dibujable.rot; } set { dibujable.rot = value; } }
         public enum FF_form { Circulo, Rectangulo,DosCirculos};
+        public event EventHandler Click;
         public UTGameObject(string imagen, Vector2 pos, float escala, FF_form forma, bool isStatic = false)
         {
             dibujable = new Dibujable(imagen, pos, escala);
@@ -39,6 +40,7 @@ namespace MotorBaseFisicaMG38.SistemaGameObject
 
             UTGameObjectsManager.suscribirObjeto(this);
         }
+
         private void OnCollision(Object other)
         {
             UTGameObject otherUTG = other as UTGameObject;
@@ -50,7 +52,8 @@ namespace MotorBaseFisicaMG38.SistemaGameObject
         }
 
         public virtual void OnCollision(UTGameObject other)
-        {           
+        {
+            Click?.Invoke(this, new EventArgs());
         }
         public void Destroy()
         {

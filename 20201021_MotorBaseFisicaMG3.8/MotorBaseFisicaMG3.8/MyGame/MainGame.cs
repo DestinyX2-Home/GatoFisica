@@ -30,7 +30,9 @@ namespace MotorBaseFisicaMG38.MyGame
             camara = new Camara(new Vector2(400 / 300), 1, 0);
             camara.HacerActiva();
             circulo = new UTGameObject("meow_cookie", new Vector2(300, 80), .2f, UTGameObject.FF_form.Circulo);
+            circulo.Click += ImpactDisplayer;
             circulo.objetoFisico.absorcionChoque = .5f;
+
             UTGameObject platform = new UTGameObject("Muro", new Vector2(300, 155),.5f, UTGameObject.FF_form.Rectangulo, true);
             platform.objetoFisico.absorcionChoque = .6f;
             platform.rot = 30 * 2 * (float)Math.PI / 360;
@@ -149,6 +151,15 @@ namespace MotorBaseFisicaMG38.MyGame
             Vector2 distance;
             distance = new Vector2((int)(camara.PosMouseEnCamara().X - circulo.objetoFisico.pos.X), (int)(camara.PosMouseEnCamara().Y - circulo.objetoFisico.pos.Y));
             circulo.objetoFisico.AplicaFuerza(-distance, 1);
+        }
+
+        private void ImpactDisplayer(object sender, System.EventArgs e)
+        {
+            TextDisplayer txt = components[0] as TextDisplayer;
+            UTGameObject obj = sender as UTGameObject;
+            if(obj.objetoFisico.vel.X > 3 || obj.objetoFisico.vel.Y > 3)
+
+                txt.ChangeText("Velocidad terminal\n" + "X: " + Math.Round(obj.objetoFisico.vel.X, 2) + ", Y: " + Math.Round(obj.objetoFisico.vel.Y, 2));
         }
     }
 }

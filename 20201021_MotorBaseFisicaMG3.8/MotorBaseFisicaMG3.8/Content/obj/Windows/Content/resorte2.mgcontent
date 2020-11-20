@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/yamif/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/resorte2.png</SourceFile>
-  <SourceTime>2020-11-02T17:01:55.3587871-03:00</SourceTime>
-  <DestFile>C:/Users/yamif/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/bin/Windows/Content/resorte2.xnb</DestFile>
-  <DestTime>2020-11-20T16:30:36.6749868-03:00</DestTime>
+  <SourceFile>C:/Users/cvene/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/resorte2.png</SourceFile>
+  <SourceTime>2020-10-31T19:46:03.3504788-03:00</SourceTime>
+  <DestFile>C:/Users/cvene/Documents/GitHub/GatoFisica/20201021_MotorBaseFisicaMG3.8/MotorBaseFisicaMG3.8/Content/bin/Windows/Content/resorte2.xnb</DestFile>
+  <DestTime>2020-11-20T19:05:31.030864-03:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2020-08-10T16:17:54-04:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

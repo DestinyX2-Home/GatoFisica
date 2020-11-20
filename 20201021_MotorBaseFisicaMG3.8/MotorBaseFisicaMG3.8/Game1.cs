@@ -174,7 +174,7 @@ namespace MotorBaseFisicaMG38
                         };
                         TextDisplayer text2 = new TextDisplayer(Content.Load<Texture2D>("borde3"), Content.Load<SpriteFont>("Font"))
                         {
-                            Scale = 0f,
+                            Scale = 1f,
                             Position = Vector2.Zero,
                             Text = "",
                         };
